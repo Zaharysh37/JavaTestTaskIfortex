@@ -5,7 +5,6 @@ import com.example.java_ifortex_test_task.entity.Session;
 import com.example.java_ifortex_test_task.mapper.SessionMapper;
 import com.example.java_ifortex_test_task.repository.SessionRepository;
 import java.time.LocalDateTime;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +30,6 @@ public class SessionService {
             .getSessionsFromActiveUsersEndedBefore2025(endDate);
         return sessions.stream()
             .map(sessionMapper::toDto)
-            .collect(Collectors.toList());
+            .toList();
     }
 }

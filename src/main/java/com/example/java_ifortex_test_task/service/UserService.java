@@ -3,9 +3,7 @@ package com.example.java_ifortex_test_task.service;
 import com.example.java_ifortex_test_task.dto.UserResponseDTO;
 import com.example.java_ifortex_test_task.entity.User;
 import com.example.java_ifortex_test_task.mapper.UserMapper;
-import com.example.java_ifortex_test_task.repository.SessionRepository;
 import com.example.java_ifortex_test_task.repository.UserRepository;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +26,6 @@ public class UserService {
         List<User> users = userRepository.getUsersWithAtLeastOneMobileSession();
         return users.stream()
             .map(userMapper::toDto)
-            .collect(Collectors.toList());
+            .toList();
     }
 }
